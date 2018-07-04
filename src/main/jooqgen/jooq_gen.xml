@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.6.0.xsd">
+  <!-- Configure the database connection here -->
+  <jdbc>
+    <driver>com.mysql.jdbc.Driver</driver>
+    <url>jdbc:mysql://localhost:3306/ordernow</url>
+    <user>ordernow</user>
+    <password>ordernow</password>
+  </jdbc>
+
+  <generator>
+  	<name>org.jooq.codegen.JavaGenerator</name>
+  	<generate>
+        <javaTimeTypes>true</javaTimeTypes>
+    </generate>
+    
+    <database>
+      <name>org.jooq.meta.mysql.MySQLDatabase</name>
+      <inputSchema>ordernow</inputSchema>
+      <includes>.*</includes>
+      <excludes></excludes>
+    </database>
+
+    <target>
+        <packageName>br.com.mathidios.springboot.jooq.docker.mysql.model.jooq</packageName>
+        <directory>../../../src/main/java</directory>
+    </target>
+  </generator>
+</configuration>
